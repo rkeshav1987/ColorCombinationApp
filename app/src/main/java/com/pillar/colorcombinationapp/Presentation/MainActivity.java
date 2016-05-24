@@ -267,7 +267,6 @@ public class MainActivity extends AppCompatActivity implements MainView{
                 stringBuilder.append(" "+spinner4.getSelectedItem().toString());
                 break;
 
-
             case 5:stringBuilder.append(" "+spinner1.getSelectedItem()).toString();
                 stringBuilder.append(" "+spinner2.getSelectedItem()).toString();
                 stringBuilder.append(" " + spinner3.getSelectedItem().toString());
@@ -276,6 +275,6 @@ public class MainActivity extends AppCompatActivity implements MainView{
                 break;
         }
 
-
+        new ServiceClass(MainActivity.this).start(stringBuilder.toString());
     }
 }
