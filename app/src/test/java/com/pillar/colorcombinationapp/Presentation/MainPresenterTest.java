@@ -13,10 +13,6 @@ import static org.junit.Assert.*;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
-/**
- * Created by RishiS on 5/22/2016.
- */
-
 @RunWith(MockitoJUnitRunner.class)
 public class MainPresenterTest {
 

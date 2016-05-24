@@ -2,9 +2,6 @@ package com.pillar.colorcombinationapp.Presentation;
 
 import com.pillar.colorcombinationapp.R;
 
-/**
- * Created by RishiS on 5/23/2016.
- */
 public class MainPresenter {
 
     private MainView view;

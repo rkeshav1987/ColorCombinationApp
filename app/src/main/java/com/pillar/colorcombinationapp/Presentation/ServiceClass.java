@@ -10,9 +10,7 @@ import com.pillar.colorcombinationapp.Model.ColorChipsClass;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-/**
- * Created by RishiS on 5/23/2016.
- */
+
 public class ServiceClass {
 
     private Context context;
