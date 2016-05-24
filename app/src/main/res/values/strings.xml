@@ -1,3 +1,36 @@
 <resources>
     <string name="app_name">ColorCombinationApp</string>
+
+    <string name="no_of_family_members">Enter No of family members upto 5</string>
+    <string name="begin_marker"></string>
+
+    <string name="no_of_members_empty_error">Field cannot be left blank</string>
+    <string name="max_members_error">Please choose between 1-5 members</string>
+
+    <string-array name="numbers">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+    </string-array>
+
+    <string-array name="colors_array">
+        <item>blue,yellow</item>
+        <item>red,orange</item>
+        <item>red,green</item>
+        <item>yellow,red</item>
+        <item>orange,red</item>
+        <item>orange,purple</item>
+    </string-array>
+
+    <string-array name="begin_end_color_array">
+        <item>blue</item>
+        <item>yellow</item>
+        <item>red</item>
+        <item>orange</item>
+        <item>green</item>
+        <item>purple</item>
+    </string-array>
+
 </resources>
