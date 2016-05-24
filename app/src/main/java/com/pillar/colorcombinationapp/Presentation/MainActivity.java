@@ -7,7 +7,13 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
+import android.view.View;
 import android.widget.EditText;
+import android.widget.Spinner;
+import android.widget.TextView;
 
 import com.nispok.snackbar.Snackbar;
 import com.nispok.snackbar.SnackbarManager;
@@ -18,6 +24,23 @@ public class MainActivity extends AppCompatActivity implements MainView{
 
     private EditText editText;
     private MainPresenter presenter;
+
+    private Spinner beginSpinner;
+    private Spinner endSpinner;
+
+    private Spinner spinner1;
+    private Spinner spinner2;
+    private Spinner spinner3;
+    private Spinner spinner4;
+    private Spinner spinner5;
+
+    private TextView textView1;
+    private TextView textView2;
+    private TextView textView3;
+    private TextView textView4;
+    private TextView textView5;
+
+    private int mCount=0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -113,5 +136,125 @@ public class MainActivity extends AppCompatActivity implements MainView{
     @Override
     public void showNoOfMembersOutofRangeError(int resId) {
         showSnackBar(resId);
+    }
+
+    @Override
+    public void startProcessing(int count) {
+        mCount=count;
+        initializeSpinner(count);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        switch (item.getItemId()){
+
+            case R.id.next:
+                getColorCodes(mCount);
+                return true;
+
+            default:
+                return super.onOptionsItemSelected(item);
+
+        }
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu, menu);
+        return true;
+    }
+
+    private void initializeSpinner(int count){
+
+        beginSpinner.setVisibility(View.VISIBLE);
+        endSpinner.setVisibility(View.VISIBLE);
+
+        switch (count){
+            case 1: spinner1.setVisibility(View.VISIBLE);
+
+                textView1.setVisibility(View.VISIBLE);
+                break;
+
+            case 2: spinner1.setVisibility(View.VISIBLE);
+                spinner2.setVisibility(View.VISIBLE);
+
+                textView1.setVisibility(View.VISIBLE);
+                textView2.setVisibility(View.VISIBLE);
+                break;
+
+            case 3: spinner1.setVisibility(View.VISIBLE);
+                spinner2.setVisibility(View.VISIBLE);
+                spinner3.setVisibility(View.VISIBLE);
+
+                textView1.setVisibility(View.VISIBLE);
+                textView2.setVisibility(View.VISIBLE);
+                textView3.setVisibility(View.VISIBLE);
+
+                break;
+
+
+            case 4: spinner1.setVisibility(View.VISIBLE);
+                spinner2.setVisibility(View.VISIBLE);
+                spinner3.setVisibility(View.VISIBLE);
+                spinner4.setVisibility(View.VISIBLE);
+
+                textView1.setVisibility(View.VISIBLE);
+                textView2.setVisibility(View.VISIBLE);
+                textView3.setVisibility(View.VISIBLE);
+                textView4.setVisibility(View.VISIBLE);
+                break;
+
+            case 5: spinner1.setVisibility(View.VISIBLE);
+                spinner2.setVisibility(View.VISIBLE);
+                spinner3.setVisibility(View.VISIBLE);
+                spinner4.setVisibility(View.VISIBLE);
+                spinner5.setVisibility(View.VISIBLE);
+
+                textView1.setVisibility(View.VISIBLE);
+                textView2.setVisibility(View.VISIBLE);
+                textView3.setVisibility(View.VISIBLE);
+                textView4.setVisibility(View.VISIBLE);
+                textView5.setVisibility(View.VISIBLE);
+                break;
+        }
+
+    }
+
+    private void getColorCodes(int count) {
+
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append(beginSpinner.getSelectedItem() + "," + endSpinner.getSelectedItem());
+
+        switch (count){
+            case 1: stringBuilder.append(" "+spinner1.getSelectedItem()).toString();
+                break;
+
+            case 2:stringBuilder.append(" "+spinner1.getSelectedItem()).toString();
+                stringBuilder.append(" "+spinner2.getSelectedItem()).toString();
+                break;
+
+            case 3:stringBuilder.append(" "+spinner1.getSelectedItem()).toString();
+                stringBuilder.append(" "+spinner2.getSelectedItem()).toString();
+                stringBuilder.append(" " + spinner3.getSelectedItem().toString());
+                break;
+
+            case 4:stringBuilder.append(" "+spinner1.getSelectedItem()).toString();
+                stringBuilder.append(" "+spinner2.getSelectedItem()).toString();
+                stringBuilder.append(" " + spinner3.getSelectedItem().toString());
+                stringBuilder.append(" "+spinner4.getSelectedItem().toString());
+                break;
+
+
+            case 5:stringBuilder.append(" "+spinner1.getSelectedItem()).toString();
+                stringBuilder.append(" "+spinner2.getSelectedItem()).toString();
+                stringBuilder.append(" " + spinner3.getSelectedItem().toString());
+                stringBuilder.append(" "+spinner4.getSelectedItem().toString());
+                stringBuilder.append(" " + spinner5.getSelectedItem().toString());
+                break;
+        }
+
     }
 }

@@ -10,4 +10,7 @@ public interface MainView {
     void showNoOfMembersEmptyError(int resId);
 
     void showNoOfMembersOutofRangeError(int resId);
+
+    void startProcessing(int count);
+
 }

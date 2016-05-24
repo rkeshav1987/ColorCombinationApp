@@ -47,4 +47,12 @@ public class MainPresenterTest {
 
         verify(view).showNoOfMembersOutofRangeError(R.string.max_members_error);
     }
+
+    @Test
+    public void shouldstartProcessingWhenNoofMembersInputIsCorrect() throws Exception {
+        when(view.getNoOfMembersValue()).thenReturn("3");
+        presenter.onEnteringValueForNoOfMembers();
+
+        verify(view).startProcessing(3);
+    }
 }
