@@ -39,4 +39,12 @@ public class MainPresenterTest {
         verify(view).showNoOfMembersEmptyError(R.string.no_of_members_empty_error);
     }
 
+    @Test
+    public void shouldShowErrorMessageWhenNoOfMembersIsBeyondRange() throws Exception {
+        when(view.getNoOfMembersValue()).thenReturn("7");
+        when(view.getNoOfMembersValue()).thenReturn("0");
+        presenter.onEnteringValueForNoOfMembers();
+
+        verify(view).showNoOfMembersOutofRangeError(R.string.max_members_error);
+    }
 }

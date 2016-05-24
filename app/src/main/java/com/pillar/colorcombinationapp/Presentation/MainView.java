@@ -8,4 +8,6 @@ public interface MainView {
     String getNoOfMembersValue();
 
     void showNoOfMembersEmptyError(int resId);
+
+    void showNoOfMembersOutofRangeError(int resId);
 }

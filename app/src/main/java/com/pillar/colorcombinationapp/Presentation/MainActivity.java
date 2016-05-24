@@ -109,4 +109,9 @@ public class MainActivity extends AppCompatActivity implements MainView{
     public void showNoOfMembersEmptyError(int resId) {
         showSnackBar(resId);
     }
+
+    @Override
+    public void showNoOfMembersOutofRangeError(int resId) {
+        showSnackBar(resId);
+    }
 }
