@@ -1,5 +1,7 @@
 package com.pillar.colorcombinationapp.Presentation;
 
+import com.pillar.colorcombinationapp.R;
+
 /**
  * Created by RishiS on 5/23/2016.
  */
@@ -14,6 +16,10 @@ public class MainPresenter {
     }
 
     public void onEnteringValueForNoOfMembers() {
+        String value = view.getNoOfMembersValue();
 
+        if (value.isEmpty()) {
+            view.showNoOfMembersEmptyError(R.string.no_of_members_empty_error);
+        }
     }
 }
