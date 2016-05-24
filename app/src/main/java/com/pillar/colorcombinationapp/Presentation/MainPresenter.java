@@ -20,6 +20,11 @@ public class MainPresenter {
 
         if (value.isEmpty()) {
             view.showNoOfMembersEmptyError(R.string.no_of_members_empty_error);
+        } else {
+
+            if (Integer.parseInt(value) > 5 || Integer.parseInt(value) < 1) {
+                view.showNoOfMembersOutofRangeError(R.string.max_members_error);
+            }
         }
     }
 }
