@@ -47,10 +47,30 @@ public class MainActivity extends AppCompatActivity implements MainView{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        initialize();
+
         presenter = new MainPresenter(this,new ServiceClass(MainActivity.this));
 
         launchNoOfFamilyMembersDialog();
     }
+
+    private void initialize() {
+        beginSpinner=(Spinner) findViewById(R.id.beginSpinner);
+        endSpinner=(Spinner) findViewById(R.id.endSpinner);
+
+        spinner1 = (Spinner) findViewById(R.id.spinner1);
+        spinner2 = (Spinner) findViewById(R.id.spinner2);
+        spinner3 = (Spinner) findViewById(R.id.spinner3);
+        spinner4 = (Spinner) findViewById(R.id.spinner4);
+        spinner5 = (Spinner) findViewById(R.id.spinner5);
+
+        textView1=(TextView)findViewById(R.id.txtview1);
+        textView2=(TextView)findViewById(R.id.txtview2);
+        textView3=(TextView)findViewById(R.id.txtview3);
+        textView4=(TextView)findViewById(R.id.txtview4);
+        textView5=(TextView)findViewById(R.id.txtview5);
+    }
+
     private void launchNoOfFamilyMembersDialog() {
 
         LayoutInflater li = MainActivity.this.getLayoutInflater();
@@ -255,6 +275,7 @@ public class MainActivity extends AppCompatActivity implements MainView{
                 stringBuilder.append(" " + spinner5.getSelectedItem().toString());
                 break;
         }
+
 
     }
 }

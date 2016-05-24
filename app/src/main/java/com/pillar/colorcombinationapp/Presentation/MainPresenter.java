@@ -25,6 +25,9 @@ public class MainPresenter {
             if (Integer.parseInt(value) > 5 || Integer.parseInt(value) < 1) {
                 view.showNoOfMembersOutofRangeError(R.string.max_members_error);
             }
+            else {
+                view.startProcessing(Integer.parseInt(value));
+            }
         }
     }
 }
